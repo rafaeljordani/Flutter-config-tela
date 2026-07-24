@@ -13,30 +13,33 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Color(0xFF146C43),
+          backgroundColor: colorGreen,
           foregroundColor: Colors.white,
           elevation: 0,
           centerTitle: false,
+          shape: null,
+          titleSpacing: 16,
 
-          leading: Icon(Icons.arrow_back, color: Colors.white),
           title: Text(
-            'Perfil',
+            'Configurações',
             style: TextStyle(
               fontSize: 20,
-              fontWeight: FontWeight.w500,
+              fontWeight: FontWeight.w600,
               color: Colors.white,
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-          actions: [
-            Icon(Icons.menu, color: Colors.white, size: 24),
-            Padding(padding: EdgeInsets.only(right: 16)),
-          ],
         ),
+
         bottomNavigationBar: BottomNavigationBar(
-          currentIndex: 1,
+          selectedItemColor: Colors.grey.shade700,
+          unselectedItemColor: colorGreen,
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'home'),
-            BottomNavigationBarItem(icon: Icon(Icons.search), label: 'search'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Configurações',
+            ),
           ],
         ),
       ),
