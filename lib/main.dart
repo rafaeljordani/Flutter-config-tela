@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 
 void main() {
@@ -47,7 +45,6 @@ class MainApp extends StatelessWidget {
                   decoration: BoxDecoration(
                     color: const Color(0xffE8f5EE),
                     borderRadius: BorderRadius.circular(12),
-                    border: null,
                   ),
                   child: Row(
                     children: [
@@ -155,59 +152,54 @@ class MainApp extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                      Row(
                         children: [
-                          Row(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(right: 8.0),
-                                child: Icon(
-                                  Icons.workspace_premium,
-                                  color: colorGreen,
-                                  size: 32,
-                                ),
-                              ),
-                              const Text(
-                                'Plano Premium',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff1F1F1F),
-                                ),
-                              ),
-                              const Spacer(),
-                              Container(
-                                padding: const EdgeInsets.symmetric(
-                                  horizontal: 10,
-                                  vertical: 4,
-                                ),
-                                decoration: BoxDecoration(
-                                  color: const Color(0xffEBF5EE),
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: Text(
-                                  'Ativo',
-                                  style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: colorGreen,
-                                  ),
-                                ),
-                              ),
-                            ],
+                          Padding(
+                            padding: const EdgeInsets.only(right: 8.0),
+                            child: Icon(
+                              Icons.workspace_premium,
+                              color: colorGreen,
+                              size: 32,
+                            ),
                           ),
-                          const Padding(
-                            padding: EdgeInsets.only(top: 8.0),
+                          const Text(
+                            'Plano Premium',
+                            style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff1F1F1F),
+                            ),
+                          ),
+                          const Spacer(),
+                          Container(
+                            padding: const EdgeInsets.symmetric(
+                              horizontal: 10,
+                              vertical: 4,
+                            ),
+                            decoration: BoxDecoration(
+                              color: const Color(0xffEBF5EE),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                             child: Text(
-                              'Armazenamento ultilizado',
+                              'Ativo',
                               style: TextStyle(
-                                fontSize: 14,
-                                color: Color(0xffBABABA),
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: colorGreen,
                               ),
                             ),
                           ),
                         ],
+                      ),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          'Armazenamento ultilizado',
+                          style: TextStyle(
+                            fontSize: 14,
+                            color: Color(0xffBABABA),
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 16.0),
@@ -296,7 +288,6 @@ class MainApp extends StatelessWidget {
                 SizedBox(
                   width: double.infinity,
                   child: OutlinedButton(
-                    style: OutlinedButton.styleFrom(),
                     onPressed: olamundo,
                     child: Text(
                       'Sair da conta',
@@ -314,12 +305,9 @@ class MainApp extends StatelessWidget {
         bottomNavigationBar: BottomNavigationBar(
           selectedItemColor: Colors.grey.shade700,
           unselectedItemColor: colorGreen,
-          items: [
-            const BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Perfil',
-            ),
-            const BottomNavigationBarItem(
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+            BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Configurações',
             ),
